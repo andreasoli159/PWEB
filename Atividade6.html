@@ -4,7 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="atividade6.js" defer></script>
+    <script>
+        let opcao = prompt(
+    "Escolha uma opção:\n" +
+    "1 - Calcular média do aluno\n" +
+    "2 - Operações com dois números"
+);
+ 
+if (opcao === "1") {
+    // Exercício 1 - Média
+    let nome = prompt("Digite o nome do aluno:");
+ 
+    let n1 = parseFloat(prompt("Digite a 1ª nota:"));
+    let n2 = parseFloat(prompt("Digite a 2ª nota:"));
+    let n3 = parseFloat(prompt("Digite a 3ª nota:"));
+    let n4 = parseFloat(prompt("Digite a 4ª nota:"));
+ 
+    let media = (n1 + n2 + n3 + n4) / 4;
+ 
+    alert("Aluno: " + nome + "\nMédia: " + media.toFixed(2));
+ 
+    if (confirm("Deseja verificar se foi aprovado?")) {
+        if (media >= 6) {
+            alert(nome + " foi aprovado!");
+        } else {
+            alert(nome + " foi reprovado!");
+        }
+    }
+ 
+} else if (opcao === "2") {
+    // Exercício 2 - Operações
+    let num1 = parseFloat(prompt("Digite o primeiro número:"));
+    let num2 = parseFloat(prompt("Digite o segundo número:"));
+ 
+    let soma = num1 + num2;
+    let subtracao = num1 - num2;
+    let multiplicacao = num1 * num2;
+    let divisao = num1 / num2;
+    let resto = num1 % num2;
+ 
+    alert(
+        "Resultados:\n" +
+        "Soma: " + soma + "\n" +
+        "Subtração: " + subtracao + "\n" +
+        "Multiplicação: " + multiplicacao + "\n" +
+        "Divisão: " + divisao + "\n" +
+        "Resto da divisão: " + resto
+    );
+ 
+    if (confirm("Deseja calcular novamente?")) {
+        location.reload();
+    }
+ 
+} else {
+    alert("Opção inválida. Recarregue a página e tente novamente.");
+}
+ 
+    </script>
 
 </head>
 <body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedra, Papel ou Tesoura</title>
+</head>
+<body>
+
+  <h1>Pedra, Papel ou Tesoura</h1>
+
+  <button onclick="jogar('pedra')">Pedra</button>
+  <button onclick="jogar('papel')">Papel</button>
+  <button onclick="jogar('tesoura')">Tesoura</button>
+
+  <pre id="resultado"></pre>
+
+  <script>
+    function jogar(u) {
+      const o = ['pedra', 'papel', 'tesoura'];
+      const c = o[Math.floor(Math.random() * 3)];
+      const r = u === c ? 'Empate!' :
+                (u === 'pedra' && c === 'tesoura') || 
+                (u === 'papel' && c === 'pedra') || 
+                (u === 'tesoura' && c === 'papel') ? 'Você venceu!' :
+                'Computador venceu!';
+
+      document.getElementById('resultado').innerText = 
+        `Você escolheu: ${u}\nComputador escolheu: ${c}\n${r}`;
+    }
+  </script>
+
+</body>
+</html>
